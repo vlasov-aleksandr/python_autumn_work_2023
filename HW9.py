@@ -18,5 +18,12 @@ print('задача 9-2')
 
 # задача 9-3 частотный анализ
 print('задча 9-3')
-
-
+input_txt = input('Введите текст: ')
+res = {}
+for sym in input_txt:
+    if res.get(sym, None):
+        res[sym] += 1
+    else:
+        res[sym] = 1
+res_sorted = sorted(res.items(), key=lambda x: x[1], reverse=True)
+print(dict(res_sorted))
